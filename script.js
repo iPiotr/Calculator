@@ -50,14 +50,14 @@ for (var i = 0; i < operator.length; i++) {
             }
             if (output != "" || history != "") {
                 output = output == "" ? output : reverseNumberFormat(output);
-                history = history + output;
+                history = `${history} ${output}`;
                 if (this.id == "=") {
                     var result = eval(history);
                     printOutput(result);
-                    printHistory("");
+                    printHistory(history);
                 }
                 else {
-                    history = `${history} ${this.id}`;
+                    history = (`${history} ${this.id}`);
                     printHistory(history);
                     printOutput("0");
                 }
