@@ -31,7 +31,7 @@ for (var i = 0; i < operator.length; i++) {
     operator[i].addEventListener('click', function () {
         if (this.id == "clear") {
             printHistory("");
-            printOutput("");
+            printOutput("0");
         }
         else if (this.id == "backspace") {
             var output = reverseNumberFormat(getOutput()).toString();
@@ -57,9 +57,9 @@ for (var i = 0; i < operator.length; i++) {
                     printHistory("");
                 }
                 else {
-                    history = history + this.id;
+                    history = `${history} ${this.id}`;
                     printHistory(history);
-                    printOutput("");
+                    printOutput("0");
                 }
             }
         }
